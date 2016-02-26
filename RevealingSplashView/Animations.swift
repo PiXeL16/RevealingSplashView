@@ -9,6 +9,7 @@
 import Foundation
 
 
+public typealias SplashAnimatableCompletion = () -> Void
 
 // MARK: - Protool extension to define the basic functionality for the SplashAnimatable
 public extension SplashAnimatable where Self: UIView {
@@ -16,11 +17,11 @@ public extension SplashAnimatable where Self: UIView {
     /**
      Starts the animation depending on the type
      */
-    public func startAnimation()
+    public func startAnimation(completion: SplashAnimatableCompletion? = nil)
     {
         switch animationType{
         case .Twitter:
-            playTwitterAnimation()
+            playTwitterAnimation(completion)
         }
     }
     
@@ -28,14 +29,14 @@ public extension SplashAnimatable where Self: UIView {
     /**
      Plays the twitter animation
      */
-    public func playTwitterAnimation()
+    public func playTwitterAnimation(completion: SplashAnimatableCompletion? = nil)
     {
         
         if let imageView = self.imageView {
             
             //Define the shink and grow duration based on the duration parameter
-            let shrinkDuration: NSTimeInterval = duration * 0.5
-            let growDuration: NSTimeInterval =  duration * 0.6
+            let shrinkDuration: NSTimeInterval = duration * 0.3
+            let growDuration: NSTimeInterval =  duration * 0.5
             
             //Plays the shrink animation
             UIView.animateWithDuration(shrinkDuration, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
@@ -57,6 +58,8 @@ public extension SplashAnimatable where Self: UIView {
                         }, completion: { finished in
                             
                             self.removeFromSuperview()
+                            
+                            completion?()
                     })
             })
         }
