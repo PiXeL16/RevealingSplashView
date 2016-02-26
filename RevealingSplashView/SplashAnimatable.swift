@@ -10,15 +10,21 @@ import Foundation
 import UIKit
 
 
+/**
+ *  Protocol that represents splash animatable functionality
+ */
 public protocol SplashAnimatable: class{
     
-    
+    /// The image view that shows the icon
     var imageView: UIImageView? { get set }
     
-    var animationType: AnimationType { get set }
+    /// The animation type
+    var animationType: SplashAnimationType { get set }
     
+    /// The duration of the overall animation
     var duration: Double { get set }
     
+    /// The delay to play the animation
     var delay: Double { get set }
     
 }

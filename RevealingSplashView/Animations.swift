@@ -10,7 +10,7 @@ import Foundation
 
 
 
-// MARK: - Defines the animation to play
+// MARK: - Protool extension to define the basic functionality for the SplashAnimatable
 public extension SplashAnimatable where Self: UIView {
     
     /**
@@ -35,7 +35,7 @@ public extension SplashAnimatable where Self: UIView {
             
             //Define the shink and grow duration based on the duration parameter
             let shrinkDuration: NSTimeInterval = duration * 0.5
-            let growDuration: NSTimeInterval =  duration * 0.7
+            let growDuration: NSTimeInterval =  duration * 0.6
             
             //Plays the shrink animation
             UIView.animateWithDuration(shrinkDuration, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {

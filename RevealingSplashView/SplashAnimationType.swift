@@ -8,7 +8,12 @@
 
 import Foundation
 
-public enum AnimationType: String{
+/**
+ The types of animation supported
+ 
+ - Twitter: The default animation type is the Twitter App animation
+ */
+public enum SplashAnimationType: String{
     
     case Twitter
     

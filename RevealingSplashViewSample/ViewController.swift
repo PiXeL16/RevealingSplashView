@@ -14,12 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!, backgroundColor: UIColor.blueColor())
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSizeMake(80, 80), backgroundColor: UIColor(rgba:"#1D8FF1"))
         
         self.view.addSubview(revealingSplashView)
         
         revealingSplashView.startAnimation()
-        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
