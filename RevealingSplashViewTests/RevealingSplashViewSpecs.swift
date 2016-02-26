@@ -85,7 +85,7 @@ class RevealingSplashViewSpecs: QuickSpec {
                 
         }
         
-        it("rotate out animation completes") {
+        it("Rotate out animation completes") {
                 
                 revealingSplashView.animationType = SplashAnimationType.RotateOut
                 
@@ -103,7 +103,7 @@ class RevealingSplashViewSpecs: QuickSpec {
         }
         
         
-        it("wobble out animation completes") {
+        it("Wobble out animation completes") {
             
             revealingSplashView.animationType = SplashAnimationType.WoobleAndZoomOut
             
@@ -121,7 +121,7 @@ class RevealingSplashViewSpecs: QuickSpec {
         }
         
         
-        it("swing out animation completes") {
+        it("Swing out animation completes") {
             
             revealingSplashView.animationType = SplashAnimationType.SwingAndZoomOut
             
