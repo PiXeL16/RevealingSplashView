@@ -30,6 +30,9 @@ public extension SplashAnimatable where Self: UIView {
         case .WoobleAndZoomOut:
             playWoobleAnimation(completion)
             
+        case.PopAndZoomOut:
+            playPopAnimation(completion)
+            
         }
         
     }
@@ -45,7 +48,6 @@ public extension SplashAnimatable where Self: UIView {
             
             //Define the shink and grow duration based on the duration parameter
             let shrinkDuration: NSTimeInterval = duration * 0.3
-            let growDuration: NSTimeInterval =  duration * 0.5
             
             //Plays the shrink animation
             UIView.animateWithDuration(shrinkDuration, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
@@ -128,6 +130,34 @@ public extension SplashAnimatable where Self: UIView {
                      self.playZoomOutAnimation(completion)
             })
             
+        }
+    }
+    
+    
+    /**
+     Plays the pop animation with completion
+     
+     - parameter completion: completion
+     */
+    public func playPopAnimation(completion: SplashAnimatableCompletion? = nil)
+    {
+        if let imageView = self.imageView{
+            
+            let popForce = 0.5
+            
+            animateLayer({
+                let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+                animation.values = [0, 0.2 * popForce, -0.2 * popForce, 0.2 * popForce, 0]
+                animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+                animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                animation.duration = CFTimeInterval(self.duration/2)
+                animation.additive = true
+                animation.repeatCount = 2
+                animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay/2)
+                imageView.layer.addAnimation(animation, forKey: "pop")
+                }, completion: {
+                     self.playZoomOutAnimation(completion)
+            })
         }
     }
     

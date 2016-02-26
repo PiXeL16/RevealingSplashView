@@ -18,5 +18,6 @@ public enum SplashAnimationType: String{
     case Twitter
     case RotateOut
     case WoobleAndZoomOut
+    case PopAndZoomOut
     
 }

@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         
         self.view.addSubview(revealingSplashView)
         
-        revealingSplashView.animationType = SplashAnimationType.WoobleAndZoomOut
+        revealingSplashView.animationType = SplashAnimationType.PopAndZoomOut
         
         
         revealingSplashView.startAnimation(){
