@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>RevealingSplashViewSample.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>834E42441C7FFC71007F856E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>834E42581C7FFCB1007F856E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>834E426B1C7FFCB1007F856E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
