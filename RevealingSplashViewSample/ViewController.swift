@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import RevealingSplashView
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!, backgroundColor: UIColor.blueColor())
+        
+        self.view.addSubview(revealingSplashView)
+        
+        revealingSplashView.startAnimation()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -16,6 +16,11 @@
 		834E42631C7FFCB1007F856E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 834E42621C7FFCB1007F856E /* Assets.xcassets */; };
 		834E42661C7FFCB1007F856E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834E42641C7FFCB1007F856E /* LaunchScreen.storyboard */; };
 		834E42711C7FFCB1007F856E /* RevealingSplashViewSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E42701C7FFCB1007F856E /* RevealingSplashViewSampleTests.swift */; };
+		834E427A1C7FFF30007F856E /* RevealingSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E42791C7FFF30007F856E /* RevealingSplashView.swift */; };
+		834E427B1C8006FC007F856E /* RevealingSplashView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 834E423B1C7FFC71007F856E /* RevealingSplashView.framework */; };
+		834E427E1C800F5B007F856E /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E427D1C800F5B007F856E /* AnimationType.swift */; };
+		834E42801C800FA6007F856E /* SplashAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E427F1C800FA6007F856E /* SplashAnimatable.swift */; };
+		834E42881C8027D7007F856E /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E42871C8027D7007F856E /* Animations.swift */; };
 		FC86BB58C3D439483D232E7B /* Pods_RevealingSplashViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 726DAD445FB1B06995575C91 /* Pods_RevealingSplashViewTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +60,10 @@
 		834E426C1C7FFCB1007F856E /* RevealingSplashViewSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RevealingSplashViewSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		834E42701C7FFCB1007F856E /* RevealingSplashViewSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevealingSplashViewSampleTests.swift; sourceTree = "<group>"; };
 		834E42721C7FFCB1007F856E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		834E42791C7FFF30007F856E /* RevealingSplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealingSplashView.swift; sourceTree = "<group>"; };
+		834E427D1C800F5B007F856E /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
+		834E427F1C800FA6007F856E /* SplashAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashAnimatable.swift; sourceTree = "<group>"; };
+		834E42871C8027D7007F856E /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		D2A4734474A6B9061F11C8BF /* Pods-RevealingSplashViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevealingSplashViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RevealingSplashViewTests/Pods-RevealingSplashViewTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834E427B1C8006FC007F856E /* RevealingSplashView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,8 +138,10 @@
 		834E423D1C7FFC71007F856E /* RevealingSplashView */ = {
 			isa = PBXGroup;
 			children = (
+				834E427C1C800E92007F856E /* Animations */,
 				834E423E1C7FFC71007F856E /* RevealingSplashView.h */,
 				834E42401C7FFC71007F856E /* Info.plist */,
+				834E42791C7FFF30007F856E /* RevealingSplashView.swift */,
 			);
 			path = RevealingSplashView;
 			sourceTree = "<group>";
@@ -163,6 +175,16 @@
 				834E42721C7FFCB1007F856E /* Info.plist */,
 			);
 			path = RevealingSplashViewSampleTests;
+			sourceTree = "<group>";
+		};
+		834E427C1C800E92007F856E /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				834E427D1C800F5B007F856E /* AnimationType.swift */,
+				834E427F1C800FA6007F856E /* SplashAnimatable.swift */,
+				834E42871C8027D7007F856E /* Animations.swift */,
+			);
+			name = Animations;
 			sourceTree = "<group>";
 		};
 		9F6633693B171C215281D5C7 /* Frameworks */ = {
@@ -394,6 +416,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834E427E1C800F5B007F856E /* AnimationType.swift in Sources */,
+				834E42801C800FA6007F856E /* SplashAnimatable.swift in Sources */,
+				834E42881C8027D7007F856E /* Animations.swift in Sources */,
+				834E427A1C7FFF30007F856E /* RevealingSplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +575,7 @@
 		834E42501C7FFC71007F856E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -559,12 +586,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.greenpixels.RevealingSplashView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		834E42511C7FFC71007F856E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
