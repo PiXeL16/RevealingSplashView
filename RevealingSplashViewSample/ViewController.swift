@@ -18,9 +18,10 @@ class ViewController: UIViewController {
         
         self.view.addSubview(revealingSplashView)
         
-        revealingSplashView.animationType = SplashAnimationType.PopAndZoomOut
+        revealingSplashView.duration = 0.9
         
-        
+        revealingSplashView.animationType = SplashAnimationType.SwingAndZoomOut
+    
         revealingSplashView.startAnimation(){
             
             print("Completed")

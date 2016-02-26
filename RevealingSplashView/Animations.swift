@@ -30,9 +30,14 @@ public extension SplashAnimatable where Self: UIView {
         case .WoobleAndZoomOut:
             playWoobleAnimation(completion)
             
+        case .SwingAndZoomOut:
+            playSwingAnimation(completion)
+            
         case.PopAndZoomOut:
             playPopAnimation(completion)
             
+        case.SqueezeAndZoomOut:
+            playSqueezeAnimation(completion)
         }
         
     }
@@ -53,6 +58,32 @@ public extension SplashAnimatable where Self: UIView {
             UIView.animateWithDuration(shrinkDuration, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                 //Shrinks the image
                 let scaleTransform: CGAffineTransform = CGAffineTransformMakeScale(0.75,0.75)
+                imageView.transform = scaleTransform
+                
+                //When animation completes, grow the image
+                }, completion: { finished in
+                    
+                    self.playZoomOutAnimation(completion)
+            })
+        }
+    }
+    
+    
+    /**
+     Plays the twitter animation
+     */
+    public func playSqueezeAnimation(completion: SplashAnimatableCompletion? = nil)
+    {
+        
+        if let imageView = self.imageView {
+            
+            //Define the shink and grow duration based on the duration parameter
+            let shrinkDuration: NSTimeInterval = duration * 0.5
+            
+            //Plays the shrink animation
+            UIView.animateWithDuration(shrinkDuration, delay: delay/3, usingSpringWithDamping: 10, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                //Shrinks the image
+                let scaleTransform: CGAffineTransform = CGAffineTransformMakeScale(0.30,0.30)
                 imageView.transform = scaleTransform
                 
                 //When animation completes, grow the image
@@ -130,6 +161,34 @@ public extension SplashAnimatable where Self: UIView {
                      self.playZoomOutAnimation(completion)
             })
             
+        }
+    }
+    
+    /**
+     Plays the swing animation and zoom out
+     
+     - parameter completion: completion
+     */
+    public func playSwingAnimation(completion: SplashAnimatableCompletion? = nil)
+    {
+        if let imageView = self.imageView{
+            
+            let swingForce = 0.8
+            
+            animateLayer({
+                
+                let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
+                animation.values = [0, 0.3 * swingForce, -0.3 * swingForce, 0.3 * swingForce, 0]
+                animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+                animation.duration = CFTimeInterval(self.duration/2)
+                animation.additive = true
+                animation.repeatCount = 2
+                animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay/3)
+                imageView.layer.addAnimation(animation, forKey: "swing")
+                
+                }, completion: {
+                    self.playZoomOutAnimation(completion)
+            })
         }
     }
     
