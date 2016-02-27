@@ -56,7 +56,9 @@ There are several animations to choose from just set the `animationType` propert
 
 ### Twitter
 
-Its the default animation that `Twitter` use for their app. ![RevealingSplashView](/Web/revealingSplashView.gif)
+Its the default animation that `Twitter` use for their app. If `animationType` is not set it will default to this one.
+
+![RevealingSplashView](/Web/revealingSplashView.gif)
 
 ### Rotate Out
 
