@@ -37,13 +37,12 @@ class RevealingSplashViewSpecs: QuickSpec {
             expect(revealingSplashView.imageView?.tintColor).to(equal(UIColor.whiteColor()))
         }
         
-        it("completes with completion ad duration") {
+        it("completes with completion at duration") {
                 
                 revealingSplashView.duration = 3
                 
                 var completed = false
-                revealingSplashView.startAnimation()
-                    {
+                revealingSplashView.startAnimation() {
                         completed = true
                 }
                 
@@ -58,8 +57,7 @@ class RevealingSplashViewSpecs: QuickSpec {
                 revealingSplashView.duration = 3
                 
                 var completed = false
-                revealingSplashView.startAnimation()
-                    {
+                revealingSplashView.startAnimation() {
                         completed = true
                 }
                 
@@ -75,8 +73,7 @@ class RevealingSplashViewSpecs: QuickSpec {
                 revealingSplashView.duration = 3
                 
                 var completed = false
-                revealingSplashView.startAnimation()
-                    {
+                revealingSplashView.startAnimation() {
                         completed = true
                 }
                 
@@ -92,8 +89,7 @@ class RevealingSplashViewSpecs: QuickSpec {
                 revealingSplashView.duration = 3
                 
                 var completed = false
-                revealingSplashView.startAnimation()
-                    {
+                revealingSplashView.startAnimation() {
                         completed = true
                 }
                 
@@ -110,8 +106,7 @@ class RevealingSplashViewSpecs: QuickSpec {
             revealingSplashView.duration = 1
             
             var completed = false
-            revealingSplashView.startAnimation()
-                {
+            revealingSplashView.startAnimation() {
                     completed = true
             }
             
@@ -128,8 +123,7 @@ class RevealingSplashViewSpecs: QuickSpec {
             revealingSplashView.duration = 2
             
             var completed = false
-            revealingSplashView.startAnimation()
-                {
+            revealingSplashView.startAnimation() {
                     completed = true
             }
             
