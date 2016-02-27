@@ -13,7 +13,7 @@ import RevealingSplashView
 import UIKit
 
 
-//Specs for the delayer class
+//Specs for the revealingSplashView class and basic functionality
 class RevealingSplashViewSpecs: QuickSpec {
     
     override func spec() {
