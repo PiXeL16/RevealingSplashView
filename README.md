@@ -62,6 +62,51 @@ Its the default animation that `Twitter` use for their app. ![RevealingSplashVie
 
 Similar to the `Twitter` one but rotating while zooming out.
 
+```swift
+
+revealingSplashView.animationType = SplashAnimationType.RotateOut
+```
+![RotateOutAnimation](/Web/rotateAndZoomOut.gif)
+
+### Pop and Zoom Out
+
+Pop the view a couple of times and zoom out.
+
+```swift
+
+revealingSplashView.animationType = SplashAnimationType.PopAndZoomOut
+```
+![RotateOutAnimation](/Web/popAndZoomOut.gif)
+
+### Squeeze and Zoom Out
+
+Squeeze the view and zoom out.
+
+```swift
+
+revealingSplashView.animationType = SplashAnimationType.SqueezeAndZoomOut
+```
+![RotateOutAnimation](/Web/squeezeAndZoomOut.gif)
+
+### Swing and Zoom Out
+
+Swings the view and zoom out.
+
+```swift
+
+revealingSplashView.animationType = SplashAnimationType.SwingAndZoomOut
+```
+![RotateOutAnimation](/Web/swingAndZoomOut.gif)
+
+### Wobble and Zoom Out
+
+Wobbles the view and zoom out.
+
+```swift
+
+revealingSplashView.animationType = SplashAnimationType.WobbleAndZoomOut
+```
+![RotateOutAnimation](/Web/wobbleAndZoomOut.gif)
 
 TODO
 -----
