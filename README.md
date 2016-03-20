@@ -24,7 +24,7 @@ Get `RevealingSplashView` on CocoaPods, just add `pod 'RevealingSplashView'` to 
 
 :metal: Usage
 ---
-Usage is pretty easy, just initialize your `RevealingSplashView` in your entry `ViewController` and in your `viewDidLoad()` delegate add it to your view. Then call `startAnimation()`:
+Usage is pretty easy, just initialize your `RevealingSplashView` in your entry `ViewController` and in your `viewDidLoad()` function add it to your view. Then call `startAnimation()`:
 
 ```swift
 import RevealingSplashView
