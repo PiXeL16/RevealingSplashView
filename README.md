@@ -22,6 +22,8 @@ A Splash view that animates and reveals its content, inspired by the `Twitter` s
 ---
 Get `RevealingSplashView` on CocoaPods, just add `pod 'RevealingSplashView'` to your `Podfile` and then run `pod install`.
 
+If you use `Carthage` you can just install it by adding `github "PiXeL16/RevealingSplashView"` to your `Carthage` file.
+
 :metal: Usage
 ---
 Usage is pretty easy, just initialize your `RevealingSplashView` in your entry `ViewController` and in your `viewDidLoad()` function add it to your view. Then call `startAnimation()`:
