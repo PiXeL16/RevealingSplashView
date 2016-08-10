@@ -52,6 +52,34 @@ override func viewDidLoad() {
 
 So it you set your constrains in your `LaunchScreen.storyboard` to be 80 `height` and 80 `width` you should set the same size as the initial size of the `RevealingSplashView`
 
+### Custom Icon Color
+You are also able to change the color of your `iconImage`.
+
+```swift
+import RevealingSplashView
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+
+        //Initialize a revealing Splash with with the iconImage, the initial size and the background color
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSizeMake(70, 70), backgroundColor: UIColor(rgba:"#1D8FF1"))
+
+        revealingSplashView.useCustomIconColor = true
+        revealingSplashView.iconColor = UIColor.redColor
+
+        //Adds the revealing splash view as a sub view
+        self.view.addSubview(revealingSplashView)
+
+        //Starts animation
+        revealingSplashView.startAnimation(){
+            print("Completed")
+        }
+
+    }
+```
+This will change the actual icon color to red before the animation.
+
+
 :thumbsup: Animations Types
 ----
 There are several animations to choose from just set the `animationType` property of the `RevealingSplashView`

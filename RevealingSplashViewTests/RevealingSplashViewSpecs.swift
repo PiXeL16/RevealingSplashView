@@ -29,12 +29,14 @@ class RevealingSplashViewSpecs: QuickSpec {
             revealingSplashView.duration = 1.0
             revealingSplashView.delay  = 1.0
             revealingSplashView.iconColor = UIColor.whiteColor()
+            revealingSplashView.useCustomIconColor = true
             revealingSplashView.iconImage = iconImage
             revealingSplashView.iconInitialSize = CGSizeMake(30, 30)
             
             
             expect(revealingSplashView).notTo(beNil())
             expect(revealingSplashView.animationType).to(equal(SplashAnimationType.Twitter))
+            expect(revealingSplashView.imageView?.image?.renderingMode).to(equal(UIImageRenderingMode.AlwaysTemplate))
             expect(revealingSplashView.imageView?.tintColor).to(equal(UIColor.whiteColor()))
         }
         

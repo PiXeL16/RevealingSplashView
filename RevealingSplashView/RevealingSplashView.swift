@@ -19,7 +19,7 @@ public class RevealingSplashView: UIView, SplashAnimatable{
         
         didSet{
             if let iconImage = self.iconImage{
-                imageView?.image = iconImage.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+                imageView?.image = iconImage
             }
         }
         
@@ -33,6 +33,25 @@ public class RevealingSplashView: UIView, SplashAnimatable{
              imageView?.tintColor = iconColor
         }
             
+    }
+    
+    public var useCustomIconColor: Bool = false{
+        
+        didSet{
+            
+            if(useCustomIconColor == true){
+
+                if let iconImage = self.iconImage {
+                    imageView?.image = iconImage.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+                }
+            }
+            else{
+                
+                if let iconImage = self.iconImage {
+                    imageView?.image = iconImage.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+                }
+            }
+        }
     }
     
     ///The initial size of the icon. Ideally it has to match with the size of the icon in your LaunchScreen Splash view
@@ -74,8 +93,7 @@ public class RevealingSplashView: UIView, SplashAnimatable{
         //Inits the view to the size of the screen
         super.init(frame: UIScreen.mainScreen().bounds)
         
-        //Set the rendering mode so we can set a tint color to the icon
-        imageView?.image = iconImage.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        imageView?.image = iconImage
         imageView?.tintColor = iconColor
         //Set the initial size and position
         imageView?.frame = CGRect(x: 0, y: 0, width: iconInitialSize.width, height: iconInitialSize.height)
