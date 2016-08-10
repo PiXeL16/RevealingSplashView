@@ -36,7 +36,7 @@ class RevealingSplashViewSpecs: QuickSpec {
             
             expect(revealingSplashView).notTo(beNil())
             expect(revealingSplashView.animationType).to(equal(SplashAnimationType.Twitter))
-            expect(revealingSplashView.imageView?.image?.renderingMode).to(equal(UIImageRenderingMode.AlwaysTemplate))
+        
             expect(revealingSplashView.imageView?.tintColor).to(equal(UIColor.whiteColor()))
         }
         

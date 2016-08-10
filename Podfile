@@ -1,24 +1,33 @@
-platform :ios, '8.0'
-use_frameworks!
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
 
 def test_pods
-     pod 'Quick', '~> 0.8.0'
-     pod 'Nimble', '~> 3.0.0'
+     pod 'Quick'
+     pod 'Nimble'
 end
 
 target 'RevealingSplashView' do
+  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
 
-end
+  # Pods for RevealingSplashView
 
-target 'RevealingSplashViewTests' do
+  target 'RevealingSplashViewTests' do
+    inherit! :search_paths
     test_pods
+  end
+
 end
 
 target 'RevealingSplashViewSample' do
+  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for RevealingSplashViewSample
+
+  target 'RevealingSplashViewSampleTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 
 end
-
-target 'RevealingSplashViewSampleTests' do
-
-end
-
