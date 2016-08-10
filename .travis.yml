@@ -6,7 +6,7 @@ env:
   - LANG=en_US.UTF-8
 before_install:
   - bundle install
-  - bundle exec pod install
+  - bundle exec pod update
 script:
   - set -o pipefail
   - xcodebuild -version
