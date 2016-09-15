@@ -79,6 +79,18 @@ override func viewDidLoad() {
 ```
 This will change the actual icon color to red before the animation.
 
+### Using NavigationBar or TabBar?
+If you are using a `NavigationBar` or `TabBar` as your entry view controller, chances are that the animation will look offset by some pixels.
+There are a couple of options here:
+Instead of adding the `RevealingSplashView` to your ViewController, you can add it to your `window`.
+```
+let window = UIApplication.sharedApplication().keyWindow
+window?.addSubview(revealingSplashView)
+```
+
+You can also create `another` entry view controller. Then add the `RevealingSplashView` to that ViewController instead of the one with the `NavigationBar` or `TabBar`.
+Then after the animation of the `RevealingSplashView` ends you can transition to your NavigationViewController.
+
 
 :thumbsup: Animations Types
 ----
