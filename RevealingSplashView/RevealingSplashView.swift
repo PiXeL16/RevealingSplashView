@@ -11,11 +11,11 @@ import UIKit
 
 
 /// SplashView that reveals its content and animate, like twitter
-public class RevealingSplashView: UIView, SplashAnimatable{
+open class RevealingSplashView: UIView, SplashAnimatable{
     
     
     /// The icon image to show and reveal with
-    public var iconImage: UIImage? {
+    open var iconImage: UIImage? {
         
         didSet{
             if let iconImage = self.iconImage{
@@ -26,7 +26,7 @@ public class RevealingSplashView: UIView, SplashAnimatable{
     }
     
     ///The icon color of the image, defaults to white
-    public var iconColor: UIColor = UIColor.whiteColor(){
+    open var iconColor: UIColor = UIColor.white{
         
         didSet{
             
@@ -35,27 +35,27 @@ public class RevealingSplashView: UIView, SplashAnimatable{
             
     }
     
-    public var useCustomIconColor: Bool = false{
+    open var useCustomIconColor: Bool = false{
         
         didSet{
             
             if(useCustomIconColor == true){
 
                 if let iconImage = self.iconImage {
-                    imageView?.image = iconImage.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+                    imageView?.image = iconImage.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
                 }
             }
             else{
                 
                 if let iconImage = self.iconImage {
-                    imageView?.image = iconImage.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+                    imageView?.image = iconImage.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
                 }
             }
         }
     }
     
     ///The initial size of the icon. Ideally it has to match with the size of the icon in your LaunchScreen Splash view
-    public var iconInitialSize: CGSize = CGSizeMake(60, 60) {
+    open var iconInitialSize: CGSize = CGSize(width: 60, height: 60) {
         
         didSet{
             
@@ -64,16 +64,16 @@ public class RevealingSplashView: UIView, SplashAnimatable{
     }
     
     /// THe image view containing the icon Image
-    public var imageView: UIImageView?
+    open var imageView: UIImageView?
     
     /// The type of animation to use for the. Defaults to the Twitter default animation
-    public var animationType: SplashAnimationType = SplashAnimationType.Twitter
+    open var animationType: SplashAnimationType = SplashAnimationType.Twitter
     
     /// The duration of the animation, default to 1.5 seconds
-    public var duration: Double = 1.5
+    open var duration: Double = 1.5
     
     /// The delay of the animation, default to 0.5 seconds
-    public var delay: Double = 0.5
+    open var delay: Double = 0.5
     
     /**
      Default constructor of the class
@@ -91,14 +91,14 @@ public class RevealingSplashView: UIView, SplashAnimatable{
         self.iconImage = iconImage
         self.iconInitialSize = iconInitialSize
         //Inits the view to the size of the screen
-        super.init(frame: UIScreen.mainScreen().bounds)
+        super.init(frame: UIScreen.main.bounds)
         
         imageView?.image = iconImage
         imageView?.tintColor = iconColor
         //Set the initial size and position
         imageView?.frame = CGRect(x: 0, y: 0, width: iconInitialSize.width, height: iconInitialSize.height)
         //Sets the content mode and set it to be centered
-        imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView?.contentMode = UIViewContentMode.scaleAspectFit
         imageView?.center = self.center
         
         //Adds the icon to the view

@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
 # The Cocoa library package manager.
-gem 'cocoapods'
+# The Cocoa library package manager.
+# gem 'cocoapods --pre'
+gem 'cocoapods', :git => 'https://github.com/CocoaPods/CocoaPods.git', :branch => '1-1-stable'
+
 
 # A CocoaPods plugin to remove and de-intergrate CocoaPods from your project    .
 gem 'cocoapods-deintegrate'

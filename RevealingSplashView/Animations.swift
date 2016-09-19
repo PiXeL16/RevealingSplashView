@@ -18,7 +18,7 @@ public extension SplashAnimatable where Self: UIView {
     /**
      Starts the animation depending on the type
      */
-    public func startAnimation(completion: SplashAnimatableCompletion? = nil)
+    public func startAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         switch animationType{
         case .Twitter:
@@ -46,18 +46,18 @@ public extension SplashAnimatable where Self: UIView {
     /**
      Plays the twitter animation
      */
-    public func playTwitterAnimation(completion: SplashAnimatableCompletion? = nil)
+    public func playTwitterAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         
         if let imageView = self.imageView {
             
             //Define the shink and grow duration based on the duration parameter
-            let shrinkDuration: NSTimeInterval = duration * 0.3
+            let shrinkDuration: TimeInterval = duration * 0.3
             
             //Plays the shrink animation
-            UIView.animateWithDuration(shrinkDuration, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            UIView.animate(withDuration: shrinkDuration, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 10, options: UIViewAnimationOptions(), animations: {
                 //Shrinks the image
-                let scaleTransform: CGAffineTransform = CGAffineTransformMakeScale(0.75,0.75)
+                let scaleTransform: CGAffineTransform = CGAffineTransform(scaleX: 0.75,y: 0.75)
                 imageView.transform = scaleTransform
                 
                 //When animation completes, grow the image
@@ -72,18 +72,18 @@ public extension SplashAnimatable where Self: UIView {
     /**
      Plays the twitter animation
      */
-    public func playSqueezeAnimation(completion: SplashAnimatableCompletion? = nil)
+    public func playSqueezeAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         
         if let imageView = self.imageView {
             
             //Define the shink and grow duration based on the duration parameter
-            let shrinkDuration: NSTimeInterval = duration * 0.5
+            let shrinkDuration: TimeInterval = duration * 0.5
             
             //Plays the shrink animation
-            UIView.animateWithDuration(shrinkDuration, delay: delay/3, usingSpringWithDamping: 10, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            UIView.animate(withDuration: shrinkDuration, delay: delay/3, usingSpringWithDamping: 10, initialSpringVelocity: 10, options: UIViewAnimationOptions(), animations: {
                 //Shrinks the image
-                let scaleTransform: CGAffineTransform = CGAffineTransformMakeScale(0.30,0.30)
+                let scaleTransform: CGAffineTransform = CGAffineTransform(scaleX: 0.30,y: 0.30)
                 imageView.transform = scaleTransform
                 
                 //When animation completes, grow the image
@@ -99,7 +99,7 @@ public extension SplashAnimatable where Self: UIView {
      
      - parameter completion: when the animation completes
      */
-    public func playRotateOutAnimation(completion: SplashAnimatableCompletion? = nil)
+    public func playRotateOutAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         if let imageView = self.imageView{
             
@@ -108,12 +108,12 @@ public extension SplashAnimatable where Self: UIView {
             
             - returns:
             */
-            UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: UIViewAnimationOptions(), animations: {
                 
                 //Sets a simple rotate
-                let rotateTranform = CGAffineTransformMakeRotation(CGFloat(M_PI * 0.99))
+                let rotateTranform = CGAffineTransform(rotationAngle: CGFloat(M_PI * 0.99))
                 //Mix the rotation with the zoom out animation
-                imageView.transform = CGAffineTransformConcat(rotateTranform, self.getZoomOutTranform())
+                imageView.transform = rotateTranform.concatenating(self.getZoomOutTranform())
                 //Removes the animation
                 self.alpha = 0
                 
@@ -132,7 +132,7 @@ public extension SplashAnimatable where Self: UIView {
      
      - parameter completion: completion
      */
-    public func playWoobleAnimation(completion: SplashAnimatableCompletion? = nil) {
+    public func playWoobleAnimation(_ completion: SplashAnimatableCompletion? = nil) {
         
         if let imageView = self.imageView{
             
@@ -142,20 +142,20 @@ public extension SplashAnimatable where Self: UIView {
                 let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
                 rotation.values = [0, 0.3 * woobleForce, -0.3 * woobleForce, 0.3 * woobleForce, 0]
                 rotation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-                rotation.additive = true
+                rotation.isAdditive = true
                 
                 let positionX = CAKeyframeAnimation(keyPath: "position.x")
                 positionX.values = [0, 30 * woobleForce, -30 * woobleForce, 30 * woobleForce, 0]
                 positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
                 positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-                positionX.additive = true
+                positionX.isAdditive = true
                 
                 let animationGroup = CAAnimationGroup()
                 animationGroup.animations = [rotation, positionX]
                 animationGroup.duration = CFTimeInterval(self.duration/2)
                 animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay/2)
                 animationGroup.repeatCount = 2
-                imageView.layer.addAnimation(animationGroup, forKey: "wobble")
+                imageView.layer.add(animationGroup, forKey: "wobble")
                 }, completion: {
                     
                      self.playZoomOutAnimation(completion)
@@ -169,7 +169,7 @@ public extension SplashAnimatable where Self: UIView {
      
      - parameter completion: completion
      */
-    public func playSwingAnimation(completion: SplashAnimatableCompletion? = nil)
+    public func playSwingAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         if let imageView = self.imageView{
             
@@ -181,10 +181,10 @@ public extension SplashAnimatable where Self: UIView {
                 animation.values = [0, 0.3 * swingForce, -0.3 * swingForce, 0.3 * swingForce, 0]
                 animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
                 animation.duration = CFTimeInterval(self.duration/2)
-                animation.additive = true
+                animation.isAdditive = true
                 animation.repeatCount = 2
                 animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay/3)
-                imageView.layer.addAnimation(animation, forKey: "swing")
+                imageView.layer.add(animation, forKey: "swing")
                 
                 }, completion: {
                     self.playZoomOutAnimation(completion)
@@ -198,7 +198,7 @@ public extension SplashAnimatable where Self: UIView {
      
      - parameter completion: completion
      */
-    public func playPopAnimation(completion: SplashAnimatableCompletion? = nil)
+    public func playPopAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         if let imageView = self.imageView{
             
@@ -210,10 +210,10 @@ public extension SplashAnimatable where Self: UIView {
                 animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
                 animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
                 animation.duration = CFTimeInterval(self.duration/2)
-                animation.additive = true
+                animation.isAdditive = true
                 animation.repeatCount = 2
                 animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay/2)
-                imageView.layer.addAnimation(animation, forKey: "pop")
+                imageView.layer.add(animation, forKey: "pop")
                 }, completion: {
                      self.playZoomOutAnimation(completion)
             })
@@ -225,13 +225,13 @@ public extension SplashAnimatable where Self: UIView {
      
      - parameter completion: completion
      */
-    public func playZoomOutAnimation(completion: SplashAnimatableCompletion? = nil)
+    public func playZoomOutAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         if let imageView =  imageView
         {
-            let growDuration: NSTimeInterval =  duration * 0.3
+            let growDuration: TimeInterval =  duration * 0.3
             
-            UIView.animateWithDuration(growDuration, animations:{
+            UIView.animate(withDuration: growDuration, animations:{
                 
                 imageView.transform = self.getZoomOutTranform()
                 self.alpha = 0
@@ -253,15 +253,15 @@ public extension SplashAnimatable where Self: UIView {
      
      - returns: ZoomOut fransfork
      */
-    private func getZoomOutTranform() -> CGAffineTransform
+    fileprivate func getZoomOutTranform() -> CGAffineTransform
     {
-        let zoomOutTranform: CGAffineTransform = CGAffineTransformMakeScale(20, 20)
+        let zoomOutTranform: CGAffineTransform = CGAffineTransform(scaleX: 20, y: 20)
         return zoomOutTranform
     }
     
     
     // MARK: - Private
-    private func animateLayer(animation: SplashAnimatableExecution, completion: SplashAnimatableCompletion? = nil) {
+    fileprivate func animateLayer(_ animation: SplashAnimatableExecution, completion: SplashAnimatableCompletion? = nil) {
         
         CATransaction.begin()
         if let completion = completion {

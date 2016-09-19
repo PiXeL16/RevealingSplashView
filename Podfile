@@ -1,26 +1,22 @@
-# Uncomment this line to define a global platform for your project
+# Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-def test_pods
-     pod 'Quick'
-     pod 'Nimble'
-end
-
 target 'RevealingSplashView' do
-  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for RevealingSplashView
 
   target 'RevealingSplashViewTests' do
     inherit! :search_paths
-    test_pods
+    pod 'Quick', :git => 'https://github.com/Quick/Quick.git' , :branch => 'swift-3.0'
+    pod 'Nimble', :git => 'https://github.com/Quick/Nimble.git', :commit => 'db706fc'  
   end
 
 end
 
 target 'RevealingSplashViewSample' do
-  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for RevealingSplashViewSample

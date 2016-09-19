@@ -19,25 +19,26 @@ class RevealingSplashViewSpecs: QuickSpec {
     
     override func spec() {
         
-        let iconImage = UIImage(named: "twitterLogo", inBundle: BundleUtil.bundle, compatibleWithTraitCollection: nil)!
+        let iconImage = UIImage(named: "twitterLogo", in: BundleUtil.bundle, compatibleWith: nil)!
         
-        let revealingSplashView = RevealingSplashView(iconImage: iconImage, iconInitialSize: CGSizeMake(50, 50), backgroundColor: UIColor.redColor())
+        let revealingSplashView = RevealingSplashView(iconImage: iconImage, iconInitialSize: CGSize(width: 50, height: 50), backgroundColor: UIColor.red)
         
         
         it("is valid with initial data"){
             
             revealingSplashView.duration = 1.0
             revealingSplashView.delay  = 1.0
-            revealingSplashView.iconColor = UIColor.whiteColor()
+            revealingSplashView.iconColor = UIColor.white
             revealingSplashView.useCustomIconColor = true
             revealingSplashView.iconImage = iconImage
-            revealingSplashView.iconInitialSize = CGSizeMake(30, 30)
+            
+            revealingSplashView.iconInitialSize = CGSize(width: 30, height: 30)
             
             
             expect(revealingSplashView).notTo(beNil())
             expect(revealingSplashView.animationType).to(equal(SplashAnimationType.Twitter))
         
-            expect(revealingSplashView.imageView?.tintColor).to(equal(UIColor.whiteColor()))
+            expect(revealingSplashView.imageView?.tintColor).to(equal(UIColor.white))
         }
         
         it("completes with completion at duration") {
