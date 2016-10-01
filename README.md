@@ -102,6 +102,12 @@ Its the default animation that `Twitter` use for their app. If `animationType` i
 
 ![RevealingSplashView](/Web/revealingSplashView.gif)
 
+### HeartBeat
+HeartBeat like animation, unlike the other animations, this `special` animation allows you to continue to animate until a function its called.
+This could be more entertaining to the user than having a quick launch and waiting on a spinning wheel if the app needs to fetch more data.
+
+![HeartBeatAnimation](/Web/heartBeat.gif)
+
 ### Rotate Out
 
 Similar to the `Twitter` one but rotating while zooming out.
