@@ -38,6 +38,9 @@ public extension SplashAnimatable where Self: UIView {
             
         case.SqueezeAndZoomOut:
             playSqueezeAnimation(completion)
+            
+        case.HeartBeat:
+            playHeartBeatAnimation(completion)
         }
         
     }
@@ -272,5 +275,47 @@ public extension SplashAnimatable where Self: UIView {
     }
     
     
+    /**
+     Plays the heatbeat animation with completion
+     
+     - parameter completion: completion
+     */
+    public func playHeartBeatAnimation(_ completion: SplashAnimatableCompletion? = nil)
+    {
+        if let imageView = self.imageView {
+            
+            let popForce = 0.8
+            
+            animateLayer({
+                let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+                animation.values = [0, 0.1 * popForce, 0.015 * popForce, 0.2 * popForce, 0]
+                animation.keyTimes = [0, 0.25, 0.35, 0.55, 1]
+                animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                animation.duration = CFTimeInterval(self.duration/2)
+                animation.isAdditive = true
+                animation.repeatCount = 1
+                animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay/2)
+                imageView.layer.add(animation, forKey: "pop")
+                }, completion: { [weak self] in 
+                    if self?.heartAttack ?? true {
+                        self?.playZoomOutAnimation(completion)
+                    } else {
+                        self?.playHeartBeatAnimation(completion)
+                    }
+            })
+        }
+    }
+    
+    
+    /**
+     Stops the heart beat animation after gracefully finishing the last beat
+     
+     This function will not stop the original completion block from getting called
+     */
+    public func finishHeartBeatAnimation()
+    {
+        self.heartAttack = true
+    }
+
     
 }
