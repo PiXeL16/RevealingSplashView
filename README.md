@@ -24,6 +24,9 @@ Get `RevealingSplashView` on CocoaPods, just add `pod 'RevealingSplashView'` to 
 
 If you use `Carthage` you can just install it by adding `github "PiXeL16/RevealingSplashView"` to your `Carthage` file.
 
+### Using Swift 2.3?
+If you are using Swift 2.3, please use the `0.0.6` release.
+
 :metal: Usage
 ---
 Usage is pretty easy, just initialize your `RevealingSplashView` in your entry `ViewController` and in your `viewDidLoad()` function add it to your view. Then call `startAnimation()`:
