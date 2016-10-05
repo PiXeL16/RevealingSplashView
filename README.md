@@ -72,7 +72,7 @@ override func viewDidLoad() {
         let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: iconSize, backgroundColor: UIColor(red:0.11, green:0.56, blue:0.95, alpha:1.0))
 
         revealingSplashView.useCustomIconColor = true
-        revealingSplashView.iconColor = UIColor.redColor
+        revealingSplashView.iconColor = UIColor.red
 
         //Adds the revealing splash view as a sub view
         self.view.addSubview(revealingSplashView)
