@@ -38,7 +38,7 @@ override func viewDidLoad() {
         super.viewDidLoad()
 
         //Initialize a revealing Splash with with the iconImage, the initial size and the background color
-        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSizeMake(70, 70), backgroundColor: UIColor(rgba:"#1D8FF1"))
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSize(width: 70, height: 70), backgroundColor: UIColor(red:0.11, green:0.56, blue:0.95, alpha:1.0))
 
         //Adds the revealing splash view as a sub view
         self.view.addSubview(revealingSplashView)
@@ -63,12 +63,12 @@ import RevealingSplashView
 
 override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Initialize a revealing Splash with with the iconImage, the initial size and the background color
-        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSizeMake(70, 70), backgroundColor: UIColor(rgba:"#1D8FF1"))
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSize(width: 70, height: 70), backgroundColor: UIColor(red:0.11, green:0.56, blue:0.95, alpha:1.0))
 
         revealingSplashView.useCustomIconColor = true
-        revealingSplashView.iconColor = UIColor.redColor
+        revealingSplashView.iconColor = UIColor.red
 
         //Adds the revealing splash view as a sub view
         self.view.addSubview(revealingSplashView)
