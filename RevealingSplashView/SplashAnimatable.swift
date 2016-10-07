@@ -29,4 +29,7 @@ public protocol SplashAnimatable: class{
     
     /// The trigger to stop heartBeat animation
     var heartAttack: Bool { get set }
+    
+    /// The minimum number of beats before removing the splash view
+    var minimumBeats: Int { get set }
 }
