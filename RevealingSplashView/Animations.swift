@@ -293,7 +293,7 @@ public extension SplashAnimatable where Self: UIView {
                 animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
                 animation.duration = CFTimeInterval(self.duration/2)
                 animation.isAdditive = true
-                animation.repeatCount = 1
+                animation.repeatCount = Float(minimumBeats > 0 ? minimumBeats : 1)
                 animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay/2)
                 imageView.layer.add(animation, forKey: "pop")
                 }, completion: { [weak self] in 

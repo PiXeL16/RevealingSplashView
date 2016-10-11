@@ -78,6 +78,9 @@ open class RevealingSplashView: UIView, SplashAnimatable{
     /// The boolean to stop the heart beat animation, default to false (continuous beat)
     open var heartAttack: Bool = false
     
+    /// The repeat counter for heart beat animation, default to 1
+    open var minimumBeats: Int = 1
+    
     /**
      Default constructor of the class
      
