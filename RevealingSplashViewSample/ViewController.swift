@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         revealingSplashView.iconColor = UIColor.red
         revealingSplashView.useCustomIconColor = false
         
-        revealingSplashView.animationType = SplashAnimationType.SwingAndZoomOut
+        revealingSplashView.animationType = SplashAnimationType.swingAndZoomOut
     
         revealingSplashView.startAnimation(){
             

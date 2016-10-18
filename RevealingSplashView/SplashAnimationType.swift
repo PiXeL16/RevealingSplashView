@@ -15,12 +15,12 @@ import Foundation
  */
 public enum SplashAnimationType: String{
     
-    case Twitter
-    case RotateOut
-    case WoobleAndZoomOut
-    case SwingAndZoomOut
-    case PopAndZoomOut
-    case SqueezeAndZoomOut
-    case HeartBeat
+    case twitter
+    case rotateOut
+    case woobleAndZoomOut
+    case swingAndZoomOut
+    case popAndZoomOut
+    case squeezeAndZoomOut
+    case heartBeat
     
 }
