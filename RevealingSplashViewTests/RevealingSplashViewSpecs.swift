@@ -36,7 +36,7 @@ class RevealingSplashViewSpecs: QuickSpec {
             
             
             expect(revealingSplashView).notTo(beNil())
-            expect(revealingSplashView.animationType).to(equal(SplashAnimationType.Twitter))
+            expect(revealingSplashView.animationType).to(equal(SplashAnimationType.twitter))
         
             expect(revealingSplashView.imageView?.tintColor).to(equal(UIColor.white))
         }
@@ -56,7 +56,7 @@ class RevealingSplashViewSpecs: QuickSpec {
         
         it("pop animation completes") {
                 
-                revealingSplashView.animationType = SplashAnimationType.PopAndZoomOut
+                revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
                 
                 revealingSplashView.duration = 3
                 
@@ -65,14 +65,14 @@ class RevealingSplashViewSpecs: QuickSpec {
                         completed = true
                 }
                 
-                expect(revealingSplashView.animationType).to(equal(SplashAnimationType.PopAndZoomOut))
+                expect(revealingSplashView.animationType).to(equal(SplashAnimationType.popAndZoomOut))
                 expect(completed).toEventually(beTrue(),timeout:3)
                 
         }
         
         it("squeeze animation completes") {
                 
-                revealingSplashView.animationType = SplashAnimationType.SqueezeAndZoomOut
+                revealingSplashView.animationType = SplashAnimationType.squeezeAndZoomOut
                 
                 revealingSplashView.duration = 3
                 
@@ -81,14 +81,14 @@ class RevealingSplashViewSpecs: QuickSpec {
                         completed = true
                 }
                 
-            expect(revealingSplashView.animationType).to(equal(SplashAnimationType.SqueezeAndZoomOut))
+            expect(revealingSplashView.animationType).to(equal(SplashAnimationType.squeezeAndZoomOut))
             expect(completed).toEventually(beTrue(),timeout:3)
                 
         }
         
         it("Rotate out animation completes") {
                 
-                revealingSplashView.animationType = SplashAnimationType.RotateOut
+                revealingSplashView.animationType = SplashAnimationType.rotateOut
                 
                 revealingSplashView.duration = 3
                 
@@ -97,7 +97,7 @@ class RevealingSplashViewSpecs: QuickSpec {
                         completed = true
                 }
                 
-            expect(revealingSplashView.animationType).to(equal(SplashAnimationType.RotateOut))
+            expect(revealingSplashView.animationType).to(equal(SplashAnimationType.rotateOut))
             expect(completed).toEventually(beTrue(),timeout:3)
                 
         }
@@ -105,7 +105,7 @@ class RevealingSplashViewSpecs: QuickSpec {
         
         it("Wobble out animation completes") {
             
-            revealingSplashView.animationType = SplashAnimationType.WoobleAndZoomOut
+            revealingSplashView.animationType = SplashAnimationType.woobleAndZoomOut
             
             revealingSplashView.duration = 1
             
@@ -114,7 +114,7 @@ class RevealingSplashViewSpecs: QuickSpec {
                     completed = true
             }
             
-            expect(revealingSplashView.animationType).to(equal(SplashAnimationType.WoobleAndZoomOut))
+            expect(revealingSplashView.animationType).to(equal(SplashAnimationType.woobleAndZoomOut))
             expect(completed).toEventually(beTrue(),timeout:1)
             
         }
@@ -122,7 +122,7 @@ class RevealingSplashViewSpecs: QuickSpec {
         
         it("Swing out animation completes") {
             
-            revealingSplashView.animationType = SplashAnimationType.SwingAndZoomOut
+            revealingSplashView.animationType = SplashAnimationType.swingAndZoomOut
             
             revealingSplashView.duration = 2
             
@@ -131,7 +131,7 @@ class RevealingSplashViewSpecs: QuickSpec {
                     completed = true
             }
             
-            expect(revealingSplashView.animationType).to(equal(SplashAnimationType.SwingAndZoomOut))
+            expect(revealingSplashView.animationType).to(equal(SplashAnimationType.swingAndZoomOut))
             expect(completed).toEventually(beTrue(),timeout:2)
             
         }

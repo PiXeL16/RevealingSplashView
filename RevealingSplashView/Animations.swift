@@ -21,25 +21,25 @@ public extension SplashAnimatable where Self: UIView {
     public func startAnimation(_ completion: SplashAnimatableCompletion? = nil)
     {
         switch animationType{
-        case .Twitter:
+        case .twitter:
             playTwitterAnimation(completion)
             
-        case .RotateOut:
+        case .rotateOut:
             playRotateOutAnimation(completion)
             
-        case .WoobleAndZoomOut:
+        case .woobleAndZoomOut:
             playWoobleAnimation(completion)
             
-        case .SwingAndZoomOut:
+        case .swingAndZoomOut:
             playSwingAnimation(completion)
             
-        case.PopAndZoomOut:
+        case .popAndZoomOut:
             playPopAnimation(completion)
             
-        case.SqueezeAndZoomOut:
+        case .squeezeAndZoomOut:
             playSqueezeAnimation(completion)
             
-        case.HeartBeat:
+        case .heartBeat:
             playHeartBeatAnimation(completion)
         }
         
