@@ -117,7 +117,7 @@ Similar to the `Twitter` one but rotating while zooming out.
 
 ```swift
 
-revealingSplashView.animationType = SplashAnimationType.RotateOut
+revealingSplashView.animationType = SplashAnimationType.rotateOut
 ```
 ![RotateOutAnimation](/Web/rotateAndZoomOut.gif)
 
@@ -127,7 +127,7 @@ Pop the view a couple of times and zoom out.
 
 ```swift
 
-revealingSplashView.animationType = SplashAnimationType.PopAndZoomOut
+revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
 ```
 ![RotateOutAnimation](/Web/popAndZoomOut.gif)
 
@@ -137,7 +137,7 @@ Squeeze the view and zoom out.
 
 ```swift
 
-revealingSplashView.animationType = SplashAnimationType.SqueezeAndZoomOut
+revealingSplashView.animationType = SplashAnimationType.squeezeAndZoomOut
 ```
 ![RotateOutAnimation](/Web/squeezeAndZoomOut.gif)
 
@@ -147,7 +147,7 @@ Swings the view and zoom out.
 
 ```swift
 
-revealingSplashView.animationType = SplashAnimationType.SwingAndZoomOut
+revealingSplashView.animationType = SplashAnimationType.swingAndZoomOut
 ```
 ![RotateOutAnimation](/Web/swingAndZoomOut.gif)
 
@@ -157,7 +157,7 @@ Wobbles the view and zoom out.
 
 ```swift
 
-revealingSplashView.animationType = SplashAnimationType.WobbleAndZoomOut
+revealingSplashView.animationType = SplashAnimationType.wobbleAndZoomOut
 ```
 ![RotateOutAnimation](/Web/wobbleAndZoomOut.gif)
 
