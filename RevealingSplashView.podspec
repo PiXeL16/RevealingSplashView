@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RevealingSplashView"
-  s.version      = "0.0.9"
+  s.version      = "0.1.0"
   s.summary      = "A Splash view that animates and reveals its content, inspired by the Twitter splash."
   s.description  = <<-DESC
 A Splash view that animates and reveals its content, inspired by the Twitter splash, written in Swift

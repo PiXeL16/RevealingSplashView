@@ -12,8 +12,6 @@ import Quick
 import RevealingSplashView
 import UIKit
 
-
-
 //Specs for the revealingSplashView class and basic functionality
 class RevealingSplashViewSpecs: QuickSpec {
     
