@@ -7,6 +7,7 @@ env:
 before_install:
   - bundle install
   - bundle exec pod update
+  - bundle exec pod install
 script:
   - set -o pipefail
   - xcodebuild -version
