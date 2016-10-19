@@ -1,29 +1,10 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '9.0'
+inhibit_all_warnings!
 
-target 'RevealingSplashView' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+project 'RevealingSplashView'
+use_frameworks!
 
-  # Pods for RevealingSplashView
-
-  target 'RevealingSplashViewTests' do
-    inherit! :search_paths
-    pod 'Quick'
-    pod 'Nimble', :git => 'https://github.com/Quick/Nimble.git', :commit => 'db706fc'  
-  end
-
-end
-
-target 'RevealingSplashViewSample' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for RevealingSplashViewSample
-
-  target 'RevealingSplashViewSampleTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+target 'RevealingSplashViewTests' do
+  pod 'Quick'
+  pod 'Nimble'
 end
