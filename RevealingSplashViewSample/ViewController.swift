@@ -26,18 +26,17 @@ class ViewController: UIViewController {
         revealingSplashView.animationType = SplashAnimationType.SwingAndZoomOut
     
         revealingSplashView.startAnimation(){
-            
+            self.setNeedsStatusBarAppearanceUpdate()
             print("Completed")
         }
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override var prefersStatusBarHidden: Bool {
+        return !UIApplication.shared.isStatusBarHidden
     }
-
-
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return UIStatusBarAnimation.fade
+    }
 }
 
