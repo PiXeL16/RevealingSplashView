@@ -10,7 +10,12 @@ import UIKit
 import RevealingSplashView
 
 class ViewController: UIViewController {
-
+    private var revealingLoaded = false
+    
+    override var shouldAutorotate: Bool {
+        return revealingLoaded
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +31,7 @@ class ViewController: UIViewController {
         revealingSplashView.animationType = SplashAnimationType.swingAndZoomOut
     
         revealingSplashView.startAnimation(){
+            self.revealingLoaded = true
             self.setNeedsStatusBarAppearanceUpdate()
             print("Completed")
         }
