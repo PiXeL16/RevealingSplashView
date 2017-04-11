@@ -97,7 +97,7 @@ open class RevealingSplashView: UIView, SplashAnimatable{
         self.iconImage = iconImage
         self.iconInitialSize = iconInitialSize
         //Inits the view to the size of the screen
-        super.init(frame: (UIApplication.shared.windows.first!.bounds))
+        super.init(frame: (UIScreen.main.bounds))
         
         imageView?.image = iconImage
         imageView?.tintColor = iconColor
