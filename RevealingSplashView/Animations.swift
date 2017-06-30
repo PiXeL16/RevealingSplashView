@@ -12,8 +12,8 @@ import Foundation
 public typealias SplashAnimatableCompletion = () -> Void
 public typealias SplashAnimatableExecution = () -> Void
 
-// MARK: - Protool extension to define the basic functionality for the SplashAnimatable
-public extension SplashAnimatable where Self: UIView {
+// MARK: - Class extension to define the basic functionality for the RevealingSplashView class
+public extension RevealingSplashView {
     
     /**
      Starts the animation depending on the type
