@@ -170,5 +170,15 @@ TODO
 ------
 Chris Jimenez - http://code.chrisjimenez.net, [@chrisjimeneznat](http://twitter.com/chrisjimeneznat)
 
+:beer: Donate
+------
+If you want to buy me a beer, you can donate to my coin addresses below:
+#### BTC
+1BeGBew4CBdLgUSmvoyiU1LrM99GpkXgkj
+#### ETH
+0xa59a3793E3Cb5f3B1AdE6887783D225EDf67192d
+#### LTC
+Ld6FB3Tqjf6B8iz9Gn9sMr7BnowAjSUXaV
+
 ## License
 `RevealingSplashView` is released under the MIT license. See [LICENSE](https://github.com/pixel16/RevealingSplashView/blob/master/LICENSE) for details.
