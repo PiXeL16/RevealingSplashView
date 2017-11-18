@@ -19,11 +19,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSize(width: 70, height: 70), backgroundColor: UIColor(rgba:"#1D8FF1"))
+//        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!,iconInitialSize: CGSize(width: 70, height: 70), backgroundColor: UIColor(rgba:"#1D8FF1"))
+        
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!, iconInitialSize: CGSize(width: 70, height: 70), backgroundImage: UIImage(named: "BackgroundImage")!)
+        
         
         self.view.addSubview(revealingSplashView)
         
-        revealingSplashView.duration = 0.9
+        revealingSplashView.duration = 4.0
         
         revealingSplashView.iconColor = UIColor.red
         revealingSplashView.useCustomIconColor = false

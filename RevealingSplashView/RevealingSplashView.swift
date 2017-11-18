@@ -63,6 +63,9 @@ open class RevealingSplashView: UIView, SplashAnimatable{
         }
     }
     
+    /// The image view containing the background Image
+    open var backgroundImageView: UIImageView?
+    
     /// THe image view containing the icon Image
     open var imageView: UIImageView?
     
@@ -112,6 +115,36 @@ open class RevealingSplashView: UIView, SplashAnimatable{
         
         //Sets the background color
         self.backgroundColor = backgroundColor
+        
+    }
+    
+    public init(iconImage: UIImage, iconInitialSize:CGSize, backgroundImage: UIImage)
+    {
+        //Sets the initial values of the image view and icon view
+        self.imageView = UIImageView()
+        self.iconImage = iconImage
+        self.iconInitialSize = iconInitialSize
+        //Inits the view to the size of the screen
+        super.init(frame: (UIScreen.main.bounds))
+        
+        imageView?.image = iconImage
+        imageView?.tintColor = iconColor
+        //Set the initial size and position
+        imageView?.frame = CGRect(x: 0, y: 0, width: iconInitialSize.width, height: iconInitialSize.height)
+        //Sets the content mode and set it to be centered
+        imageView?.contentMode = UIViewContentMode.scaleAspectFit
+        imageView?.center = self.center
+        
+        //Sets the background image
+        self.backgroundImageView = UIImageView()
+        backgroundImageView?.image = backgroundImage
+        backgroundImageView?.frame = UIScreen.main.bounds
+        backgroundImageView?.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.addSubview(backgroundImageView!)
+        
+        //Adds the icon to the view
+        self.addSubview(imageView!)
         
     }
 
