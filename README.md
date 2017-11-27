@@ -82,6 +82,32 @@ override func viewDidLoad() {
 ```
 This will change the actual icon color to red before the animation.
 
+### Custom Background Image
+You are also able to change the background image of your `backgroundImage`.
+
+```swift
+import RevealingSplashView
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //Initialize a revealing Splash with with the iconImage, the initial size and the background color
+        let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "twitterLogo")!, iconInitialSize: CGSize(width: 70, height: 70), backgroundImage: UIImage(named: "BackgroundImage")!)
+
+        revealingSplashView.useCustomIconColor = false
+        revealingSplashView.iconColor = UIColor.red
+
+        //Adds the revealing splash view as a sub view
+        self.view.addSubview(revealingSplashView)
+
+        //Starts animation
+        revealingSplashView.startAnimation(){
+            print("Completed")
+        }
+
+    }
+```
+
 ### Using NavigationBar or TabBar?
 If you are using a `NavigationBar` or `TabBar` as your entry view controller, chances are that the animation will look offset by some pixels.
 There are a couple of options here:
