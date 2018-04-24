@@ -51,6 +51,9 @@ override func viewDidLoad() {
     }
 ```
 
+### Video Tutorial
+`Rebeloper` created a nice [Video Tutorial](https://www.youtube.com/watch?v=jtCsh4R8UWo) where you can also learn how to use this control!.
+
 **Ideally** your `iconInitialSize` should match the size of the icon in your `LaunchScreen.storyboard`.
 
 So it you set your constrains in your `LaunchScreen.storyboard` to be 80 `height` and 80 `width` you should set the same size as the initial size of the `RevealingSplashView`
@@ -134,6 +137,13 @@ Its the default animation that `Twitter` use for their app. If `animationType` i
 ### HeartBeat
 HeartBeat like animation, unlike the other animations, this `special` animation allows you to continue to animate until a function its called.
 This could be more entertaining to the user than having a quick launch and waiting on a spinning wheel if the app needs to fetch more data.
+
+To use the Heartbeat animation you should `startAnimation()` as normal and then proceed with your network or background job. When you are done, just call
+```swift
+.heartAttack = true
+```
+And the splashview should dismiss.
+
 
 ![HeartBeatAnimation](/Web/heartBeat.gif)
 
