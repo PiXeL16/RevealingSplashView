@@ -29,6 +29,10 @@ If you are using Swift 2.3, please use the `0.0.6` release.
 
 :metal: Usage
 ---
+
+### Video Tutorial
+`Rebeloper` created a nice [Video Tutorial](https://www.youtube.com/watch?v=jtCsh4R8UWo) where you can also learn how to use this control!. You can also follow the docs below
+
 Usage is pretty easy, just initialize your `RevealingSplashView` in your entry `ViewController` and in your `viewDidLoad()` function add it to your view. Then call `startAnimation()`:
 
 ```swift
@@ -50,9 +54,6 @@ override func viewDidLoad() {
 
     }
 ```
-
-### Video Tutorial
-`Rebeloper` created a nice [Video Tutorial](https://www.youtube.com/watch?v=jtCsh4R8UWo) where you can also learn how to use this control!.
 
 **Ideally** your `iconInitialSize` should match the size of the icon in your `LaunchScreen.storyboard`.
 
