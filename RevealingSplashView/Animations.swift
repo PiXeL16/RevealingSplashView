@@ -58,7 +58,7 @@ public extension RevealingSplashView {
             let shrinkDuration: TimeInterval = duration * 0.3
             
             //Plays the shrink animation
-            UIView.animate(withDuration: shrinkDuration, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 10, options: UIViewAnimationOptions(), animations: {
+          UIView.animate(withDuration: shrinkDuration, delay: delay, usingSpringWithDamping: 0.7, initialSpringVelocity: 10, options: UIView.AnimationOptions(), animations: {
                 //Shrinks the image
                 let scaleTransform: CGAffineTransform = CGAffineTransform(scaleX: 0.75,y: 0.75)
                 imageView.transform = scaleTransform
@@ -84,7 +84,7 @@ public extension RevealingSplashView {
             let shrinkDuration: TimeInterval = duration * 0.5
             
             //Plays the shrink animation
-            UIView.animate(withDuration: shrinkDuration, delay: delay/3, usingSpringWithDamping: 10, initialSpringVelocity: 10, options: UIViewAnimationOptions(), animations: {
+          UIView.animate(withDuration: shrinkDuration, delay: delay/3, usingSpringWithDamping: 10, initialSpringVelocity: 10, options: UIView.AnimationOptions(), animations: {
                 //Shrinks the image
                 let scaleTransform: CGAffineTransform = CGAffineTransform(scaleX: 0.30,y: 0.30)
                 imageView.transform = scaleTransform
@@ -111,7 +111,7 @@ public extension RevealingSplashView {
             
             - returns:
             */
-            UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: UIViewAnimationOptions(), animations: {
+          UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: UIView.AnimationOptions(), animations: {
                 
                 //Sets a simple rotate
                 let rotateTranform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * 0.99))
@@ -150,7 +150,7 @@ public extension RevealingSplashView {
                 let positionX = CAKeyframeAnimation(keyPath: "position.x")
                 positionX.values = [0, 30 * woobleForce, -30 * woobleForce, 30 * woobleForce, 0]
                 positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-                positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+              positionX.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
                 positionX.isAdditive = true
                 
                 let animationGroup = CAAnimationGroup()
@@ -211,7 +211,7 @@ public extension RevealingSplashView {
                 let animation = CAKeyframeAnimation(keyPath: "transform.scale")
                 animation.values = [0, 0.2 * popForce, -0.2 * popForce, 0.2 * popForce, 0]
                 animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-                animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+              animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
                 animation.duration = CFTimeInterval(self.duration/2)
                 animation.isAdditive = true
                 animation.repeatCount = 2
@@ -290,7 +290,7 @@ public extension RevealingSplashView {
                 let animation = CAKeyframeAnimation(keyPath: "transform.scale")
                 animation.values = [0, 0.1 * popForce, 0.015 * popForce, 0.2 * popForce, 0]
                 animation.keyTimes = [0, 0.25, 0.35, 0.55, 1]
-                animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+              animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
                 animation.duration = CFTimeInterval(self.duration/2)
                 animation.isAdditive = true
                 animation.repeatCount = Float(minimumBeats > 0 ? minimumBeats : 1)
