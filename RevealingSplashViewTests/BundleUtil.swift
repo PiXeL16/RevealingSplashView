@@ -14,7 +14,7 @@ open class BundleUtil:NSObject{
     
     
     /// Gets the bundle property for the pod
-    open static var bundle:Bundle{
+    public static var bundle:Bundle{
         
         get{
             
