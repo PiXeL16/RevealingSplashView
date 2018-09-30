@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public typealias SplashAnimatableCompletion = () -> Void
 public typealias SplashAnimatableExecution = () -> Void
