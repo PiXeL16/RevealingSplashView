@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public typealias SplashAnimatableCompletion = () -> Void
 public typealias SplashAnimatableExecution = () -> Void
 
