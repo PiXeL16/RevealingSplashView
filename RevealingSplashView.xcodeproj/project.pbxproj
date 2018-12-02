@@ -649,8 +649,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.greenpixels.RevealingSplashView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
