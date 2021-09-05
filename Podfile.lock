@@ -7,7 +7,7 @@ DEPENDENCIES:
   - Quick
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Nimble
     - Quick
 
@@ -17,4 +17,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 210211b10b990bebe0dbf2cbceadace271413ad0
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.10.1

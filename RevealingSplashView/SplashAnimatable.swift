@@ -13,7 +13,7 @@ import UIKit
 /**
  *  Protocol that represents splash animatable functionality
  */
-public protocol SplashAnimatable: class{
+public protocol SplashAnimatable: AnyObject {
     
     /// The image view that shows the icon
     var imageView: UIImageView? { get set }
