@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Siren",
+    name: "RevealingSplashView",
     platforms: [
       .iOS(.v8)
     ],
